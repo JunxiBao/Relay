@@ -1,5 +1,10 @@
 from gpiozero import LED
 from time import sleep
+from gpiozero.pins.mock import MockFactory
+from gpiozero import Device
+
+# 使用 MockFactory 代替真实的引脚工厂
+Device.pin_factory = MockFactory()
 
 makerobo_RelayPin = LED(17)
 
